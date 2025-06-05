@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: symfony-demo-db-migration
+  namespace: {{ $.Release.Namespace | quote }}
+  annotations:
+    # This is what defines this resource as a hook. Without these lines, the
+    # resource is considered part of the release.
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-weight": "-3"
+    "helm.sh/hook-delete-policy": "before-hook-creation"
+spec:
+  template:
+    metadata:
+      name: symfony-demo-db-migration
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: migrate
+          image: my-php-app:latest
+          command:
+            - "php"
+            - "bin/console"
+            - "doctrine:migrations:migrate"
+            - "--no-interaction"
+          env:
+            - name: APP_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: symfony-demo-secret
+                  key: secret

@@ -11,6 +11,14 @@ imagePullSecrets:
 appSecret:
   secret: "c29tZV9zZWN1cmVfc3RyaW5n"
 
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
 tls:
   enabled: true
   crt: |
