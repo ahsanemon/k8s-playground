@@ -1,0 +1,78 @@
+image:
+  repository: mhkabir/symfony-demo
+  # This sets the pull policy for images.
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "v1"
+
+imagePullSecrets:
+  - name: docker-registry-secret
+
+appSecret:
+  secret: "c29tZV9zZWN1cmVfc3RyaW5n"
+
+tls:
+  enabled: true
+  crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIDPTCCAiWgAwIBAgIUDbPhb6yEnfsj6HdNMFg1nSePqaYwDQYJKoZIhvcNAQEL
+    BQAwLjEdMBsGA1UEAwwUc3ltZm9ueS1waHAtZGVtby5jb20xDTALBgNVBAoMBGRl
+    bW8wHhcNMjUwNjA0MTQxOTE0WhcNMjYwNjA0MTQxOTE0WjAuMR0wGwYDVQQDDBRz
+    eW1mb255LXBocC1kZW1vLmNvbTENMAsGA1UECgwEZGVtbzCCASIwDQYJKoZIhvcN
+    AQEBBQADggEPADCCAQoCggEBALnKICCiWJQHV6JPOaTbDh235O6xlQgjlmhJ67wI
+    6U6R2UAoUPA1mUW1iELYtPTYXRbCYz3Wd2Gw62VEtUq2QHiQtHOiEgkxy1SuA7On
+    m+0PHMw+Jr86CWiDjfA6k8+sTW34i0WYMx5vYKdNM3dVyrrF+Msw6hm+o7GIXBMX
+    CNv0GIofrt07hwJKJ7Bg2nkSwFlLlrv2ODbmjYaEZYR6WTLqij/esiJNHsfVVyl2
+    Cw74MftEi8271jyUXW9QuJJ82QwH3I0Bos8UqRsDnnPoJJ6XNnZbD4VH1LvSkyth
+    N8rABJEwWvKzxDT39UMbH2x7SJkibpYp4L6crJA0gxPfr8MCAwEAAaNTMFEwHQYD
+    VR0OBBYEFA6tKHoHXNkYXdYXICs/EyOqcMlHMB8GA1UdIwQYMBaAFA6tKHoHXNkY
+    XdYXICs/EyOqcMlHMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEB
+    AHxF+qpmkkeHv6683fkaT7nRSDPk3j7I6d4AFsSl5qSUsLhwiNaeeYMvUdv8LkPL
+    BoNtpfFA8obN1qxxmouZZbp/xgj9Xmr8ePRJOo0kE6dTZjnDamkBRE/NXSYH912v
+    MVqz037Xnc3Vf8fTSskiZgJELCaTPpX/LwWuiBVPY0g9VsLxPK5XzIokHlKErNiE
+    I4GvuHqKFRwdMZtLLk21IKrEXwWe5JSPNjj5LTJx95zmGEo/9xpKJPR4OThd0h2F
+    usQJ4nlzpPU0vxfm7nGNN8YlFIAtqWyJSk/NzJ+Ch0umfTBwd2sMskOfbKLXoetp
+    6vca2o/23uXdvyvxF6C+nd0=
+    -----END CERTIFICATE-----
+  key: |
+    -----BEGIN PRIVATE KEY-----
+    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC5yiAgoliUB1ei
+    Tzmk2w4dt+TusZUII5ZoSeu8COlOkdlAKFDwNZlFtYhC2LT02F0WwmM91ndhsOtl
+    RLVKtkB4kLRzohIJMctUrgOzp5vtDxzMPia/Oglog43wOpPPrE1t+ItFmDMeb2Cn
+    TTN3Vcq6xfjLMOoZvqOxiFwTFwjb9BiKH67dO4cCSiewYNp5EsBZS5a79jg25o2G
+    hGWEelky6oo/3rIiTR7H1VcpdgsO+DH7RIvNu9Y8lF1vULiSfNkMB9yNAaLPFKkb
+    A55z6CSelzZ2Ww+FR9S70pMrYTfKwASRMFrys8Q09/VDGx9se0iZIm6WKeC+nKyQ
+    NIMT36/DAgMBAAECggEANpcB7qTVIxWvNbVSqjJlSO0mOs56DEysnpMNzY/OwbPQ
+    Im5WLeaJ1TY8Rev367OBUrUmRN618EH0QKq6HCxF8EcQhqN56jKz3HtPAiQ/CB43
+    J3ohl3GdnxR8ibgkg1JM5AGyJm5MouY1/6KK+0b9jPirnESQnKTr4ze+WiucAkiK
+    1+mTdxa3SXu61NqimAsLdIRF49z1c4uvh628jW9puDc3oPGlf9Iu+blNH8BfDr8U
+    sTdMmpZXZ1LEKdCIUoD0N6h5FgQhhP9TQHXGm0wGxWDKJQlNictGjDctL7pJsIu6
+    LjsNjcTr9WoKpHhksUL9QKVmPqqzalfnZzer1AcACQKBgQD7E7A7FCMpyBGSEm2H
+    /BGVTGFJ0FbKXcAV8NZZkc7Q0uVRI71jxTzIYy1mlEEMVsW2Zf51rACEYl4+yOsL
+    rHLWtItNEHL4E8/CBg19ws4o1KoGn5w1+rz1VTZ/zuJy79Z3sWw7vDooWuHI9e+U
+    ws2QJAC0X25DSmI7nUHXyw0F6QKBgQC9brgZoqHyl4a3jKKdHqCKCWpzhmVgMDm8
+    b+1qx6g2uGayxQyiZYy774RcHnhF3KecunAXh3dmVHZ1Df1d/zin1VBSHSzSL+Gj
+    W3yjPXCpMW83nkdu+uoN/0VRo6qFdQ2bmsk1tzJSe7sex/R33NvguwYoGlZP42q1
+    jw+VWKwAywKBgQDkRUI0dFqD4iIXbCmpOMPDuW26bnB6DEJXsF8xkB84PIXA/31w
+    +CILDiB44tFBJqMa8iAnW/ocYlLNQl5wfpjqG7uKlSnx4hFBlb8uV66X8MGkw/iC
+    GzUw2Ah0quO3G9che22r4bX+eqJM00y/M10xb4o0c48MHtSw3oi+aR2uAQKBgFwl
+    59hQjIb9vsK63r+fjmiXe/kGf3ny+6L2r38p8GHuAccko6i7zWH+eVx2VftmAwLy
+    jmRjuWlF3PnD/GQlKuI5mgDXwF3efNyCPHcMBCnJqlhb3lPWKtT0QDweaWzSK/Rt
+    r0M6AnitR7EJg5prDWqcj7oiVao27kmzddkocUNRAoGAYa99iqauzB5YnngOaj5L
+    gtAYJe3+t7noBvA2DNbPDyDMa/jfdw3uFzpO3+VNRLbaTQktQx9G+YVmDoSyNuWh
+    Orp+zzyuP720D9JU6XkLT4iBNKx3PtT3ldsgvzTMCtZ6aV03y+wA0P78oDp2Iq9q
+    VOX0DdpYqcprF1qv0QSFuD4=
+    -----END PRIVATE KEY-----
+
+ingress:
+  enabled: true
+  className: "nginx"
+  tls:
+    - secretName: testsecret-tls
+      hosts:
+        - symfony-php-demo.com
+  hosts:
+    - host: symfony-php-demo.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
